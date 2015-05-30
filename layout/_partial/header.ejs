@@ -1,0 +1,23 @@
+<div class="header">
+    <div class="header-top">
+        <h1 class="blog-title">
+            <a class="back_home" href="<%- config.root %>" title="<%- config.title %>'s blog'" rel="home" style="float:left;"><%= config.title %></a>
+            <div style="width:200px;height:25px;padding-top:3px;padding-left:10px;float:right;">
+                <a class="github-button" href="https://github.com/w88975" data-count-href="/w88975/followers" data-count-api="/users/w88975#followers" data-count-aria-label="# followers on GitHub" aria-label="@w88975">@w88975</a>
+            </div>
+        </h1>
+    </div>
+    <div class="blog-description"><%= config.description %></div>
+</div>
+<div class="menubar">
+    <ul class="menu">
+        <% for (var i in theme.menu){ %>
+          <li><a href="<%- theme.menu[i] %>"><%= i %></a></li>
+        <% } %>
+        <% site.tags.sort('name').each(function(item){ %>
+          <li>
+          <a href="<%- config.root %><%- item.path %>"><%= item.name %>(<%= item.posts.length %>)</a>
+          </li>
+        <% }); %>
+    </ul>
+</div>

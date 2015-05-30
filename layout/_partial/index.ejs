@@ -1,0 +1,51 @@
+<!-- <article class="post">
+  <% if (item.photos && item.photos.length){ %>
+    <%- partial('post/gallery') %>
+  <% } %>
+    <header>
+      <h2 class="entry-title"><a href="<%- config.root %><%- item.path %>" rel="bookmark" title="<%=item.title%>"><%- partial('post/title') %></a></h2>
+      <% if (item.layout != 'page'){ %>
+        <time datetime="<%= item.date.toDate().toISOString() %>">Date:<%= item.date.format(config.date_format) %></time>
+        <author>author: <%=config.author%>  </author>
+      <% } %>
+    </header>
+    <div class="markdown-body entry">
+      <% if (item.excerpt && index){ %>
+        <%- item.excerpt %>
+      <% } else { %>
+        <%- item.content %>
+      <% } %>
+    </div>
+    <footer>
+      <% if (index){ %>
+        <% if (item.excerpt){ %>
+          <div class="alignleft">
+            <a class="readmore" href="<%- config.root %><%- item.path %>#more" class="more-link"><%= theme.excerpt_link %>>></a>
+          </div>
+        <% } %>
+        <% if (item.comment && config.disqus_shortname){ %>
+        <div class="alignright">
+          <a href="<%- item.permalink %>#disqus_thread" class="comment-link">Comments</a>
+        </div>
+        <% } %>
+      <% } else { %>
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+        <%- partial('post/share') %>
+      <% } %>
+      <div class="clearfix"></div>
+    </footer>
+</article>
+
+<%- partial('comment') %> -->
+
+<article class="post">
+    <h2 class="entry-title"><%- partial('post/title') %></h2>
+    <div class="markdown-body entry clearAll">
+      <% if (item.excerpt && index){ %>
+        <%- item.excerpt %>
+      <% } else { %>
+        <%- item.content %>
+      <% } %>
+    </div>
+</article>

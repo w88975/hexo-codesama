@@ -1,0 +1,13 @@
+<nav id="pagination">
+  <% if (page.prev){ %>
+        <div class="pagingbtn">
+            <a href="<%- config.root %><%- page.prev_link %>"><%= __('prev') %></a>
+        </div>
+  <% } %>
+  <% if (page.next){ %>
+    <div class="pagingbtn">
+        <a href="<%- config.root %><%- page.next_link %>"><%= __('next') %></a>
+    </div>
+  <% } %>
+  <div class="clearfix"></div>
+</nav>

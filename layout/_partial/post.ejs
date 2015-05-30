@@ -1,0 +1,11 @@
+<header>
+    <div class="post-title"><%=item.title%></div>
+    <time>Date:<%= item.date.format(config.date_format) %></time>
+</header>
+<div class="markdown-body entry">
+  <% if (item.excerpt && index){ %>
+    <%- item.excerpt %>
+  <% } else { %>
+    <%- item.content %>
+  <% } %>
+</div>
